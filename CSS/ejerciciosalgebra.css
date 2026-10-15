@@ -1,0 +1,126 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --azul-1: #2a52b0;
+  --azul-2: #4f9cf5;
+  --gris-barra: #e2e2e2;
+  --gris-card: #f4f5f9;
+  --gris-boton: #cbd5e1;
+  --texto: #111;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #fff;
+  color: var(--texto);
+}
+
+.app {
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 6px 24px 24px;
+}
+
+.topbar {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  margin-bottom: 22px;
+}
+.back {
+  position: absolute;
+  left: -20px;
+  top: 4px;
+  display: flex;
+  padding: 2px;
+}
+.search {
+  display: flex;
+  align-items: center;
+  width: 298px;
+  height: 27px;
+  padding: 0 12px 0 40px;
+  background: var(--gris-barra);
+  border-radius: 20px;
+}
+.search input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font: 500 10px 'Montserrat', sans-serif;
+  color: #333;
+}
+.search input::placeholder { color: #555; }
+.search:focus-within { outline: 2px solid var(--azul-2); }
+
+.banner {
+  position: relative;
+  overflow: hidden;
+  height: 150px;
+  padding: 26px 0 0 44px;
+  border-radius: 20px;
+  color: #fff;
+  background: linear-gradient(90deg, var(--azul-1) 0%, var(--azul-2) 100%);
+}
+.banner h1 { font-size: 26px; font-weight: 700; line-height: 1.1; padding-left: 3px; }
+.banner p  { font-size: 16px; font-weight: 500; }
+
+.formula {
+  position: absolute;
+  right: 6px;
+  top: 28px;
+  transform: rotate(-6deg);
+  font: 500 26px 'Caveat', cursive;
+  color: rgba(40, 80, 170, .55);
+  white-space: nowrap;
+  text-align: right;
+}
+.formula i { font-style: normal; text-decoration: overline; }
+.formula .den { display: block; padding-right: 26px; margin-top: -4px; }
+
+.grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px 22px;
+  margin-top: 26px;
+}
+.card {
+  background: var(--gris-card);
+  border-radius: 14px;
+  min-height: 40%;
+  padding: 22px 15px 15px;
+}
+.card h2 {
+  font-size: 15.5px;
+  font-weight: 500;
+  margin-bottom: 11px;
+  padding-left: 6px;
+}
+.card .comenzar {
+  display: block;
+  width: 100%;
+  height: 28px;
+  border: 0;
+  border-radius: 20px;
+  background: var(--gris-boton);
+  color: #000;
+  font: 500 14px 'Montserrat', sans-serif;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: background .2s;
+}
+.card .comenzar:hover { background: #b6c3d4; }
+.card .comenzar:focus-visible { outline: 2px solid var(--azul-1); outline-offset: 2px; }
+
+.vacio { grid-column: 1 / -1; text-align: center; color: #666; font-size: 14px; }
+
+@media (max-width: 420px) {
+  .app { padding: 6px 14px 20px; }
+  .grid { gap: 16px 12px; }
+  .formula { font-size: 20px; }
+}
